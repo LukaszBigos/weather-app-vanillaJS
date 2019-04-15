@@ -23,12 +23,12 @@ body {
 }
 
 input.search-control {
-  padding: 10px 10px 5px 10px;
+  padding: 10px 0px 5px 10px;
   border: none;
   border-bottom: 1px solid #aaa;
-  width: 40%;
   background-color: transparent;
   box-shadow: 0 10px 30px -12px #aaa;
+  width: 350px;
   color: #eee;
   font-size: 22px;
   text-align: center;
@@ -41,6 +41,21 @@ input.search-control:focus {
 
 input.search-control::placeholder {
   color: #ccc;
+}
+
+.err-container {
+  position: relative;
+}
+
+.error-msg {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  color: rgb(194, 10, 10);
+  text-shadow: none;
+  top: 50px;
+  left: 35%;
+  transition: visibility 0.9s ease;
 }
 
 #search-btn {

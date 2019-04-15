@@ -12,9 +12,15 @@
 
 <body>
   <div class="search-container">
-    <input type="text" id="search-input" class="search-control" placeholder="City name or Zipcode">
+    <div class="err-container">
+      <input type="text" id="search-input" class="search-control" placeholder="City name or Zipcode">
+      <p class="error-msg"></p>
+    </div>
+
     <button id="search-btn" class="search-control">Search</button>
+
   </div>
+
   <div class="weather-container">
     <div class="weather-description">
       <h1 id="city-header"></h1>
