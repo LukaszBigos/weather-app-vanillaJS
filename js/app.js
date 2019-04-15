@@ -43,9 +43,12 @@ const init = resultFromServer => {
       break;
     case 'Rain':
     case 'Drizzle':
+    case 'Fog':
+    case 'Haze':
     case 'Mist':
       document.body.style.backgroundImage = 'url("../assets/rain.jpg")';
       break;
+    case 'Thunderstorm':
     case 'Thunderstorms':
       document.body.style.backgroundImage = 'url("../assets/storm.jpg")';
       break;
@@ -63,11 +66,13 @@ const init = resultFromServer => {
   const weatherIcon = document.getElementById('weather-summary-icon');
   const wind = document.getElementById('wind-speed');
   const humidity = document.getElementById('humidity');
+  const weatherContainer = document.querySelector('.weather-container');
 
   weatherDescriptionHeader.innerHTML = resultFromServer.weather[0].description;
   cityHeader.innerHTML = resultFromServer.name;
-  temperature.innerHTML = `${Math.floor(resultFromServer.main.temp)} &#176C`;
+  temperature.innerHTML = `${Math.floor(resultFromServer.main.temp)}&#176`;
   weatherIcon.src = `http://openweathermap.org/img/w/${resultFromServer.weather[0].icon}.png`;
   wind.innerHTML = `wind: ${Math.floor(resultFromServer.wind.speed)} m/s`;
   humidity.innerHTML = `humidity: ${resultFromServer.main.humidity} %`;
+  weatherContainer.style.visibility = 'visible';
 };
