@@ -17,7 +17,7 @@ searchBtn.addEventListener("click", () => {
 const searchWeather = searchTerm => {
   getSearchMethod(searchTerm);
   fetch(
-    `http://api.openweathermap.org/data/2.5/weather?${searchMethod}=${searchTerm}&APPID=${appId}&units=${units}`
+    `https://api.openweathermap.org/data/2.5/weather?${searchMethod}=${searchTerm}&APPID=${appId}&units=${units}`
   )
     .then(result => {
       return result.json();
@@ -89,7 +89,7 @@ const getForecast = (resultFromServer) => {
     resultFromServer.weather[0].description;
   cityHeader.innerHTML = resultFromServer.name;
   temperature.innerHTML = `${Math.floor(resultFromServer.main.temp)}&#176`;
-  weatherIcon.src = `http://openweathermap.org/img/w/${
+  weatherIcon.src = `https://openweathermap.org/img/w/${
     resultFromServer.weather[0].icon
   }.png`;
   wind.innerHTML = `wind: ${Math.floor(resultFromServer.wind.speed)} m/s`;
